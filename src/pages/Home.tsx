@@ -1,33 +1,11 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import './Home.css';
-import image1 from '../assets/1.jpg';
-import image2 from '../assets/2.jpg';
-import image3 from '../assets/3.jpeg';
-import image4 from '../assets/4.jpg';
 
 const Home: React.FC = () => {
-    const [currentSlide, setCurrentSlide] = useState<number>(0);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const contentRef = useRef<HTMLDivElement>(null);
 
-    // 6 ảnh mẫu (placeholder images)
-    const images: string[] = [
-        image1,
-        image2,
-        image3,
-        image4,
-        'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1501436513145-30f24e19fcc4?w=1200&h=600&fit=crop'
-    ];
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % images.length);
-        }, 5000); // 5 giây
-
-        return () => clearInterval(interval);
-    }, [images.length]);
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -45,160 +23,281 @@ const Home: React.FC = () => {
         return () => observer.disconnect();
     }, []);
 
-    const handleDotClick = (index: number): void => {
-        setCurrentSlide(index);
-    };
-
     return (
         <div className="home-container">
             <Navbar />
 
-            {/* Hero Slideshow */}
-            <div className="hero-slideshow">
-                <div
-                    className="slideshow-wrapper"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                >
-                    {images.map((image, index) => (
-                        <div
-                            key={index}
-                            className="slide"
-                        >
-                            <img
-                                src={image}
-                                alt={`Slide ${index + 1}`}
-                                className="slide-image"
-                            />
-                            <div className="slide-overlay"></div>
+            {/* Hero Section */}
+            <section className="hero-section">
+                <div className="hero-overlay">
+                    <div className="hero-content">
+                        <div className="hero-badge">
+                            <span>🇻🇳</span>
+                            <span>Cộng hòa Xã hội chủ nghĩa Việt Nam</span>
                         </div>
-                    ))}
-                </div>
-
-                {/* Rectangle indicators */}
-                <div className="dots-container">
-                    {images.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => handleDotClick(index)}
-                            className={`rectangle-indicator ${currentSlide === index ? 'rectangle-active' : ''}`}
-                        />
-                    ))}
-                </div>
-            </div>
-            <section className="content-section" ref={contentRef}>
-                <div className="container">
-                    {/* Header Section */}
-                    <div className={`content-header ${isVisible ? 'animate-fadeIn' : ''}`}>
-                        <h2 className="main-title">Tham nhũng và Công cuộc Chống tham nhũng</h2>
-                        <p className="main-subtitle">Đảng Cộng sản Việt Nam quyết tâm xây dựng một xã hội trong sạch, minh bạch</p>
-                    </div>
-
-                    {/* Mind Map Section */}
-                    <div className={`mind-map-container ${isVisible ? 'animate-slideUp' : ''}`}>
-                        <div className="central-node">
-                            <div className="central-circle">
-                                <h3>THAM NHŨNG</h3>
-                                <p>Là gì?</p>
+                        <h1 className="hero-title">
+                            PHÒNG CHỐNG THAM NHŨNG
+                            <span className="title-highlight">VÌ MỘT VIỆT NAM TRONG SẠCH</span>
+                        </h1>
+                        <p className="hero-subtitle">
+                            "Chống tham nhũng là cuộc đấu tranh lâu dài, phức tạp, đòi hỏi sự quyết tâm cao của toàn Đảng, toàn dân"
+                        </p>
+                        <div className="hero-stats">
+                            <div className="stat-item">
+                                <div className="stat-number">100%</div>
+                                <div className="stat-label">Cam kết trong sạch</div>
                             </div>
-
-                            {/* Branches */}
-                            <div className="branch branch-1">
-                                <div className="branch-line"></div>
-                                <div className="branch-node">
-                                    <div className="node-icon">⚖️</div>
-                                    <h4>Định nghĩa</h4>
-                                    <p>Lạm dụng quyền lực được giao phó để thu lợi cá nhân</p>
-                                </div>
+                            <div className="stat-item">
+                                <div className="stat-number">0</div>
+                                <div className="stat-label">Vùng cấm</div>
                             </div>
-
-                            <div className="branch branch-2">
-                                <div className="branch-line"></div>
-                                <div className="branch-node">
-                                    <div className="node-icon">💰</div>
-                                    <h4>Hình thức</h4>
-                                    <p>Nhận hối lộ, tham ô, lạm quyền, móc nối</p>
-                                </div>
+                            <div className="stat-item">
+                                <div className="stat-number">24/7</div>
+                                <div className="stat-label">Tiếp nhận tố cáo</div>
                             </div>
-
-                            <div className="branch branch-3">
-                                <div className="branch-line"></div>
-                                <div className="branch-node">
-                                    <div className="node-icon">📉</div>
-                                    <h4>Tác hại</h4>
-                                    <p>Làm suy yếu niềm tin, cản trở phát triển</p>
-                                </div>
-                            </div>
-
-                            <div className="branch branch-4">
-                                <div className="branch-line"></div>
-                                <div className="branch-node">
-                                    <div className="node-icon">🛡️</div>
-                                    <h4>Phòng chống</h4>
-                                    <p>Giáo dục, thanh tra, xử lý nghiêm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Anti-corruption Efforts */}
-                    <div className={`anti-corruption-section ${isVisible ? 'animate-fadeIn' : ''}`}>
-                        <h3 className="section-title">Nỗ lực chống tham nhũng của Đảng Cộng sản Việt Nam</h3>
-
-                        <div className="efforts-grid">
-                            <div className="effort-card card-1">
-                                <div className="card-icon">🏛️</div>
-                                <h4>Xây dựng thể chế</h4>
-                                <p>Hoàn thiện hệ thống pháp luật, quy định về phòng chống tham nhũng</p>
-                                <div className="card-glow"></div>
-                            </div>
-
-                            <div className="effort-card card-2">
-                                <div className="card-icon">🔍</div>
-                                <h4>Tăng cường kiểm tra</h4>
-                                <p>Thanh tra, kiểm tra định kỳ và đột xuất các cơ quan, tổ chức</p>
-                                <div className="card-glow"></div>
-                            </div>
-
-                            <div className="effort-card card-3">
-                                <div className="card-icon">⚡</div>
-                                <h4>Xử lý nghiêm minh</h4>
-                                <p>Không có vùng cấm, không có ngoại lệ trong xử lý tham nhũng</p>
-                                <div className="card-glow"></div>
-                            </div>
-
-                            <div className="effort-card card-4">
-                                <div className="card-icon">💡</div>
-                                <h4>Minh bạch thông tin</h4>
-                                <p>Công khai quy trình, kết quả, tạo sự giám sát của nhân dân</p>
-                                <div className="card-glow"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Quote Section */}
-                    <div className={`quote-section ${isVisible ? 'animate-slideUp' : ''}`}>
-                        <div className="quote-container">
-                            <div className="quote-mark">"</div>
-                            <p className="quote-text">
-                                Chống tham nhũng là cuộc đấu tranh lâu dài, phức tạp, đòi hỏi sự quyết tâm cao của toàn Đảng, toàn dân
-                            </p>
-                            <div className="quote-author">- Đảng Cộng sản Việt Nam</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="footer">
-                <div className="footer-container">
-                    <div className="footer-content">
-                        <div className="footer-logo">
-                            <h3>LOGO</h3>
+            {/* Main Content */}
+            <main className="main-content" ref={contentRef}>
+
+                {/* What is Corruption Section */}
+                <section className={`content-section ${isVisible ? 'animate-in' : ''}`} id="about">
+                    <div className="section-header">
+                        <span className="section-number">01</span>
+                        <h2 className="section-title">THAM NHŨNG LÀ GÌ?</h2>
+                        <div className="section-line"></div>
+                    </div>
+
+                    <div className="definition-grid">
+                        <div className="definition-card main-definition">
+                            <div className="card-icon">⚖️</div>
+                            <h3>Định nghĩa chính thức</h3>
+                            <p>
+                                <strong>Tham nhũng</strong> là hành vi của người có chức vụ, quyền hạn đã lợi dụng
+                                chức vụ, quyền hạn đó vì vụ lợi
+                            </p>
+                            <div className="source">Luật phòng, chống tham nhũng năm 2005</div>
                         </div>
-                        <div className="footer-text">
-                            <p>&copy; 2024 Trang web giáo dục về chống tham nhũng. Tất cả quyền được bảo lưu.</p>
+
+                        <div className="characteristics-grid">
+                            <div className="char-item">
+                                <div className="char-icon">👤</div>
+                                <h4>Chủ thể</h4>
+                                <p>Người có chức vụ, quyền hạn</p>
+                            </div>
+                            <div className="char-item">
+                                <div className="char-icon">🎯</div>
+                                <h4>Phương thức</h4>
+                                <p>Lợi dụng chức vụ, quyền hạn</p>
+                            </div>
+                            <div className="char-item">
+                                <div className="char-icon">💰</div>
+                                <h4>Động cơ</h4>
+                                <p>Vì vụ lợi cá nhân</p>
+                            </div>
                         </div>
                     </div>
+
+                    <div className="corruption-types">
+                        <h3>Các hành vi tham nhũng phổ biến</h3>
+                        <div className="types-grid">
+                            <div className="type-card">
+                                <span className="type-number">1</span>
+                                <h4>Tham ô tài sản</h4>
+                                <p>Lợi dụng chức vụ chiếm đoạt tài sản mà mình có trách nhiệm quản lý</p>
+                            </div>
+                            <div className="type-card">
+                                <span className="type-number">2</span>
+                                <h4>Nhận hối lộ</h4>
+                                <p>Nhận tiền, tài sản để làm hoặc không làm một việc vì lợi ích người đưa</p>
+                            </div>
+                            <div className="type-card">
+                                <span className="type-number">3</span>
+                                <h4>Lạm dụng chức vụ</h4>
+                                <p>Vượt quá quyền hạn để chiếm đoạt tài sản của người khác</p>
+                            </div>
+                            <div className="type-card">
+                                <span className="type-number">4</span>
+                                <h4>Nhũng nhiễu</h4>
+                                <p>Gây khó khăn, yêu sách để nhận lợi ích bất chính</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Protection of Regime Section */}
+                <section className={`content-section dark-section ${isVisible ? 'animate-in' : ''}`} id="protection">
+                    <div className="section-header">
+                        <span className="section-number">02</span>
+                        <h2 className="section-title">BẢO VỆ CHỂ ĐỘ - XÂY DỰNG NHÀ NƯỚC PHÁP QUYỀN</h2>
+                        <div className="section-line"></div>
+                    </div>
+
+                    <div className="protection-content">
+                        <div className="protection-intro">
+                            <div className="intro-icon">🏛️</div>
+                            <div className="intro-text">
+                                <h3>Tầm quan trọng chiến lược</h3>
+                                <p>
+                                    Phòng, chống tham nhũng không chỉ có mục đích làm giảm vi phạm pháp luật
+                                    mà còn có ý nghĩa quan trọng bảo vệ sự vững mạnh của chế độ xã hội chủ nghĩa ở Việt Nam.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="significance-grid">
+                            <div className="significance-item">
+                                <div className="sig-header">
+                                    <div className="sig-icon">🛡️</div>
+                                    <h4>Bảo vệ chế độ</h4>
+                                </div>
+                                <ul>
+                                    <li>Ngăn chặn sự "mục nát" của bộ máy nhà nước</li>
+                                    <li>Chống lại sự tha hoá, biến chất của quan chức</li>
+                                    <li>Duy trì bản chất của Đảng và Nhà nước</li>
+                                </ul>
+                            </div>
+
+                            <div className="significance-item">
+                                <div className="sig-header">
+                                    <div className="sig-icon">⚖️</div>
+                                    <h4>Xây dựng nhà nước pháp quyền</h4>
+                                </div>
+                                <ul>
+                                    <li>Đảm bảo công bằng, dân chủ trong xã hội</li>
+                                    <li>Nâng cao hiệu lực, hiệu quả quản lý nhà nước</li>
+                                    <li>Tăng cường pháp chế xã hội chủ nghĩa</li>
+                                </ul>
+                            </div>
+
+                            <div className="significance-item">
+                                <div className="sig-header">
+                                    <div className="sig-icon">💪</div>
+                                    <h4>Củng cố niềm tin nhân dân</h4>
+                                </div>
+                                <ul>
+                                    <li>Khôi phục lòng tin vào Đảng, Nhà nước</li>
+                                    <li>Tăng cường sự ủng hộ của nhân dân</li>
+                                    <li>Đảm bảo sự ổn định chính trị - xã hội</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="commitment-box">
+                            <div className="commitment-icon">🇻🇳</div>
+                            <div className="commitment-content">
+                                <h4>Cam kết của Đảng Cộng sản Việt Nam</h4>
+                                <div className="commitment-points">
+                                    <span>✓ Quyết tâm chính trị cao nhất</span>
+                                    <span>✓ Hành động quyết liệt, đồng bộ</span>
+                                    <span>✓ Xây dựng Việt Nam trong sạch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Citizen Responsibility Section */}
+                <section className={`content-section ${isVisible ? 'animate-in' : ''}`} id="responsibility">
+                    <div className="section-header">
+                        <span className="section-number">03</span>
+                        <h2 className="section-title">TRÁCH NHIỆM CỦA CÔNG DÂN</h2>
+                        <div className="section-line"></div>
+                    </div>
+
+                    <div className="responsibility-intro">
+                        <p>
+                            Việc phòng, chống tham nhũng không chỉ là trách nhiệm của các cơ quan Nhà nước,
+                            tổ chức xã hội mà còn là trách nhiệm của mỗi công dân.
+                        </p>
+                    </div>
+
+                    <div className="responsibility-types">
+                        <div className="resp-type">
+                            <h3>
+                                <span className="resp-icon">👥</span>
+                                Công dân bình thường
+                            </h3>
+                            <div className="resp-grid">
+                                <div className="resp-item">
+                                    <div className="resp-number">1</div>
+                                    <div className="resp-content">
+                                        <h4>Chấp hành pháp luật</h4>
+                                        <p>Nghiêm chỉnh tuân thủ pháp luật về phòng, chống tham nhũng</p>
+                                    </div>
+                                </div>
+                                <div className="resp-item">
+                                    <div className="resp-number">2</div>
+                                    <div className="resp-content">
+                                        <h4>Lên án, đấu tranh</h4>
+                                        <p>Kiên quyết phê phán, lên án các hành vi tham nhũng</p>
+                                    </div>
+                                </div>
+                                <div className="resp-item">
+                                    <div className="resp-number">3</div>
+                                    <div className="resp-content">
+                                        <h4>Phát hiện, tố cáo</h4>
+                                        <p>Tích cực phát hiện và tố cáo hành vi tham nhũng</p>
+                                    </div>
+                                </div>
+                                <div className="resp-item">
+                                    <div className="resp-number">4</div>
+                                    <div className="resp-content">
+                                        <h4>Hợp tác với cơ quan chức năng</h4>
+                                        <p>Hỗ trợ trong việc xác minh, xử lý hành vi tham nhũng</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="resp-type">
+                            <h3>
+                                <span className="resp-icon">🏢</span>
+                                Cán bộ, công chức, viên chức
+                            </h3>
+                            <div className="resp-special">
+                                <div className="special-item">
+                                    <h4>Trách nhiệm đặc biệt</h4>
+                                    <ul>
+                                        <li>Thực hiện quy tắc ứng xử của cán bộ, công chức</li>
+                                        <li>Báo cáo ngay khi phát hiện dấu hiệu tham nhũng</li>
+                                        <li>Chấp hành quyết định chuyển đổi vị trí công tác</li>
+                                        <li>Kê khai tài sản theo quy định</li>
+                                    </ul>
+                                </div>
+                                <div className="special-item">
+                                    <h4>Người lãnh đạo, quản lý</h4>
+                                    <ul>
+                                        <li>Tổ chức kiểm tra việc chấp hành pháp luật</li>
+                                        <li>Xử lý kịp thời các hành vi vi phạm</li>
+                                        <li>Chịu trách nhiệm về việc để xảy ra tham nhũng</li>
+                                        <li>Tiếp nhận và giải quyết tố cáo tham nhũng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="action-call">
+                        <div className="action-content">
+                            <h3>Hành động ngay hôm nay!</h3>
+                            <p>Mỗi công dân đều có thể góp phần xây dựng một Việt Nam trong sạch</p>
+                            <div className="action-buttons">
+                                <button className="action-btn primary">Báo cáo tham nhũng</button>
+                                <button className="action-btn secondary">Tìm hiểu thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            {/* Footer */}
+            <footer className="footer">
+                <div className="footer-content">
+                    <p>&copy; 2024 Trang web giáo dục về phòng chống tham nhũng. Tất cả quyền được bảo lưu.</p>
                 </div>
             </footer>
         </div>

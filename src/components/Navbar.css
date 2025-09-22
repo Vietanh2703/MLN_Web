@@ -3,65 +3,197 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
-    background: transparent;
+    z-index: 1000;
+    background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-container {
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 1rem;
-}
-
-@media (min-width: 640px) {
-    .navbar-container {
-        padding: 0 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .navbar-container {
-        padding: 0 2rem;
-    }
-}
-
-.navbar-content {
+    padding: 0 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 4rem;
+    justify-content: space-between;
 }
 
-.navbar-logo {
-    flex-shrink: 0;
+/* Brand Section */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.logo-text {
-    color: white;
+.brand-icon {
+    position: relative;
+}
+
+.shield-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
     font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.navbar-menu {
-    flex-shrink: 0;
-}
-
-.quiz-button {
+    font-weight: 800;
     color: white;
-    padding: 0.5rem 1.5rem;
-    font-size: 1.125rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-top: -2px;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
     font-weight: 500;
-    background: none;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4299e1, #38b2ac);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 80%;
+}
+
+/* CTA Button */
+.navbar-cta {
+    display: flex;
+    align-items: center;
+}
+
+.report-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    color: white;
     border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: color 0.3s ease;
-    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
 }
 
-.quiz-button:hover {
-    color: #60a5fa; /* blue-400 */
+.report-button:hover {
+    background: linear-gradient(135deg, #c53030 0%, #9c2626 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
 }
 
-.quiz-button:focus {
-    outline: none;
+.report-button:active {
+    transform: translateY(0);
+}
+
+.report-icon {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar-menu {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .brand-title {
+        font-size: 1.2rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .report-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text {
+        display: none;
+    }
+
+    .shield-icon {
+        font-size: 2rem;
+    }
+
+    .report-button span:last-child {
+        display: none;
+    }
+
+    .report-button {
+        padding: 0.6rem;
+        border-radius: 50%;
+        min-width: 45px;
+        height: 45px;
+        justify-content: center;
+    }
 }
