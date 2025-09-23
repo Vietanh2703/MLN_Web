@@ -318,6 +318,147 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
+            {/* Causes of Corruption Section */}
+            <section className="causes-section">
+                <div className="causes-container">
+                    <div className="causes-hero">
+                        <h2 className="causes-title">Nguyên nhân của Tham nhũng</h2>
+                        <p className="causes-subtitle">Tìm hiểu những nguyên nhân gốc rễ dẫn đến tình trạng tham nhũng trong xã hội</p>
+                    </div>
+
+                    <div className="causes-grid">
+                        {/* Cause 1: Policy and Legal Limitations */}
+                        <div className="cause-card" data-delay="0">
+                            <h3 className="cause-title">Hạn chế trong chính sách, pháp luật</h3>
+                            <div className="cause-content">
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong việc thực hiện các chính sách của Đảng và Nhà nước</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Sự thiếu hoàn thiện của hệ thống pháp luật</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Sự chồng chéo, mâu thuẫn trong các quy định của pháp luật</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Sự bất cập, thiếu minh bạch và kém khả thi trong nhiều quy định</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Cause 2: Management and Administration Limitations */}
+                        <div className="cause-card" data-delay="200">
+                            <h3 className="cause-title">Hạn chế trong quản lí, điều hành</h3>
+                            <div className="cause-content">
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong quản lí và điều hành nền kinh tế</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong việc phân công trách nhiệm, quyền hạn</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong việc công khai, minh bạch hóa các cơ chế quản lí</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Chính sách quản lí kinh tế còn chưa thực sự hợp lí</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Cause 3: Detection and Processing Limitations */}
+                        <div className="cause-card" data-delay="400">
+                            <h3 className="cause-title">Hạn chế trong phát hiện và xử lí</h3>
+                            <div className="cause-content">
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong việc khuyến khích tố giác hành vi tham nhũng</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong hoạt động của các cơ quan phát hiện tham nhũng</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong hoạt động của các cơ quan tư pháp hình sự</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong việc phối hợp hoạt động giữa các cơ quan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Cause 4: Personnel and Ideological Limitations */}
+                        <div className="cause-card" data-delay="600">
+                            <h3 className="cause-title">Hạn chế trong nhận thức, tư tưởng</h3>
+                            <div className="cause-content">
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Sự xuống cấp về đạo đức, phẩm chất của cán bộ, công chức</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế trong công tác quy hoạch và bổ nhiệm cán bộ</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Thiếu minh bạch trong luân chuyển cán bộ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Cause 5: Education and Propaganda Limitations */}
+                        <div className="cause-card" data-delay="800">
+                            <h3 className="cause-title">Hạn chế trong tuyên truyền, giáo dục</h3>
+                            <div className="cause-content">
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế về phạm vi thực hiện tuyên truyền</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế về hình thức tuyên truyền</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Hạn chế về nội dung tuyên truyền</span>
+                                </div>
+                                <div className="cause-item">
+                                    <span className="item-bullet">•</span>
+                                    <span>Thiếu hiệu quả trong phổ biến giáo dục pháp luật</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="causes-summary">
+                        <div className="summary-card">
+                            <h3 className="summary-title">Tổng kết</h3>
+                            <p className="summary-text">
+                                Nguyên nhân của tham nhũng rất đa dạng và phức tạp, bao gồm cả những yếu tố khách quan và chủ quan.
+                                Việc nhận diện đúng các nguyên nhân này là cơ sở quan trọng để xây dựng các giải pháp phòng chống tham nhũng hiệu quả.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Background Elements */}
+                <div className="causes-bg">
+                    <div className="causes-bg-circle circle-1"></div>
+                    <div className="causes-bg-circle circle-2"></div>
+                    <div className="causes-bg-circle circle-3"></div>
+                    <div className="causes-bg-wave"></div>
+                </div>
+            </section>
+
             {/* Story Blocks */}
             {storyBlocks.map((block, index) => (
                 <section

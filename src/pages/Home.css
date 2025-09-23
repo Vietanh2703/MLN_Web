@@ -1419,6 +1419,522 @@
     border-radius: 50%;
 }
 
+/* Causes of Corruption Section */
+.causes-section {
+    min-height: 120vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.causes-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.causes-hero {
+    text-align: center;
+    margin-bottom: 6rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: causesHeroAppear 1.5s ease-out forwards;
+}
+
+.causes-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    position: relative;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.causes-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    border-radius: 2px;
+    animation: causesTitleUnderline 2s ease-out 0.8s forwards;
+}
+
+.causes-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #6b7280;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: causesSubtitleFade 1.5s ease-out 0.5s forwards;
+}
+
+/* Causes Grid Layout */
+.causes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.cause-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    animation: causeCardAppear 1.2s ease-out forwards;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.cause-card[data-delay="0"] { animation-delay: 1s; }
+.cause-card[data-delay="200"] { animation-delay: 1.2s; }
+.cause-card[data-delay="400"] { animation-delay: 1.4s; }
+.cause-card[data-delay="600"] { animation-delay: 1.6s; }
+.cause-card[data-delay="800"] { animation-delay: 1.8s; }
+
+.cause-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+    border-color: #dc2626;
+}
+
+.cause-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: causeCardTopLine 1s ease-out 0.5s forwards;
+    transition: all 0.3s ease;
+}
+
+.cause-card:nth-child(2)::before {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #155e75 100%);
+}
+
+.cause-card:nth-child(3)::before {
+    background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%);
+}
+
+.cause-card:nth-child(4)::before {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
+}
+
+.cause-card:nth-child(5)::before {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 50%, #991b1b 100%);
+}
+
+.cause-card:hover::before {
+    transform: scaleX(1);
+}
+
+.cause-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: causeTitleSlide 1s ease-out 1s forwards;
+}
+
+.cause-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: causeContentFade 1s ease-out 1.2s forwards;
+}
+
+.cause-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #374151;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: causeItemSlide 0.8s ease-out forwards;
+}
+
+.cause-item:nth-child(1) { animation-delay: 1.4s; }
+.cause-item:nth-child(2) { animation-delay: 1.5s; }
+.cause-item:nth-child(3) { animation-delay: 1.6s; }
+.cause-item:nth-child(4) { animation-delay: 1.7s; }
+
+.item-bullet {
+    color: #dc2626;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cause-card:nth-child(2) .item-bullet {
+    color: #0891b2;
+}
+
+.cause-card:nth-child(3) .item-bullet {
+    color: #059669;
+}
+
+.cause-card:nth-child(4) .item-bullet {
+    color: #7c3aed;
+}
+
+.cause-card:nth-child(5) .item-bullet {
+    color: #ea580c;
+}
+
+/* Causes Summary Section */
+.causes-summary {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.summary-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #e2e8f0;
+    border-radius: 30px;
+    padding: 4rem 3rem;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    animation: summaryCardAppear 1.5s ease-out 2s forwards;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.summary-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.03) 0%, transparent 70%);
+    animation: summaryCardGlow 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.summary-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: summaryTitleSlide 1s ease-out 2.3s forwards;
+}
+
+.summary-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #374151;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: summaryTextFade 1s ease-out 2.5s forwards;
+}
+
+/* Causes Background Elements */
+.causes-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.causes-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(220, 38, 38, 0.1) 100%);
+    animation: causesBgCircleFloat 25s ease-in-out infinite;
+}
+
+.causes-bg-circle.circle-1 {
+    width: 400px;
+    height: 400px;
+    top: 5%;
+    left: -200px;
+    animation-duration: 30s;
+}
+
+.causes-bg-circle.circle-2 {
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    right: -125px;
+    background: linear-gradient(135deg, rgba(8, 145, 178, 0.05) 0%, rgba(8, 145, 178, 0.1) 100%);
+    animation-duration: 35s;
+    animation-direction: reverse;
+}
+
+.causes-bg-circle.circle-3 {
+    width: 180px;
+    height: 180px;
+    bottom: 20%;
+    left: 15%;
+    background: linear-gradient(135deg, rgba(5, 150, 105, 0.05) 0%, rgba(5, 150, 105, 0.1) 100%);
+    animation-duration: 40s;
+}
+
+.causes-bg-wave {
+    position: absolute;
+    width: 200%;
+    height: 120px;
+    background: linear-gradient(90deg, transparent 0%, rgba(220, 38, 38, 0.03) 30%, rgba(8, 145, 178, 0.03) 70%, transparent 100%);
+    animation: causesBgWaveMove 20s ease-in-out infinite;
+    top: 60%;
+    left: -50%;
+}
+
+/* Causes-specific Animations */
+@keyframes causesHeroAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes causesTitleUnderline {
+    to {
+        width: 200px;
+    }
+}
+
+@keyframes causesSubtitleFade {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes causeCardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes causeCardTopLine {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes causeTitleSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes causeContentFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes causeItemSlide {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes summaryCardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes summaryCardGlow {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes summaryTitleSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes summaryTextFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes causesBgCircleFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-60px) rotate(180deg);
+    }
+}
+
+@keyframes causesBgWaveMove {
+    0%, 100% {
+        transform: translateX(-10%);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+}
+
+/* Responsive Design for Causes Section */
+@media (max-width: 1024px) {
+    .causes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .cause-card {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .causes-section {
+        padding: 6rem 1.5rem;
+    }
+
+    .causes-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cause-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .cause-title {
+        font-size: 1.6rem;
+    }
+
+    .cause-item {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .summary-card {
+        padding: 3rem 2rem;
+    }
+
+    .summary-title {
+        font-size: 2rem;
+    }
+
+    .summary-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .causes-section {
+        padding: 4rem 1rem;
+    }
+
+    .causes-grid {
+        gap: 1.5rem;
+    }
+
+    .cause-card {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    .cause-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cause-item {
+        font-size: 0.95rem;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .item-bullet {
+        font-size: 1.2rem;
+        width: 16px;
+    }
+
+    .summary-card {
+        padding: 2rem 1.5rem;
+        border-radius: 25px;
+    }
+
+    .summary-title {
+        font-size: 1.8rem;
+    }
+
+    .summary-text {
+        font-size: 1rem;
+    }
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% {
