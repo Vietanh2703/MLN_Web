@@ -21,6 +21,18 @@
 }
 
 /* Brand Section */
+.navbar-brand-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand-link:hover .brand-title {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s ease;
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -111,6 +123,47 @@
     align-items: center;
 }
 
+.quiz-button-link {
+    text-decoration: none;
+}
+
+.quiz-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+    outline: none;
+}
+
+.quiz-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-button:active {
+    transform: translateY(0);
+}
+
+.quiz-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.quiz-icon {
+    font-size: 1.1rem;
+}
+
 .report-button {
     display: flex;
     align-items: center;
@@ -174,6 +227,11 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
     }
+
+    .quiz-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -190,6 +248,18 @@
     }
 
     .report-button {
+        padding: 0.6rem;
+        border-radius: 50%;
+        min-width: 45px;
+        height: 45px;
+        justify-content: center;
+    }
+
+    .quiz-button span:last-child {
+        display: none;
+    }
+
+    .quiz-button {
         padding: 0.6rem;
         border-radius: 50%;
         min-width: 45px;

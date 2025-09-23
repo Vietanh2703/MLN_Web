@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -6,31 +7,21 @@ const Navbar: React.FC = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 {/* Logo/Brand */}
-                <div className="navbar-brand">
-                    <div className="brand-icon">
-                        <div className="shield-icon">🛡️</div>
+                <Link to="/" className="navbar-brand-link">
+                    <div className="navbar-brand">
+                        <div className="brand-text">
+                            <span className="brand-title">PHÒNG CHỐNG THAM NHŨNG</span>
+                        </div>
                     </div>
-                    <div className="brand-text">
-                        <span className="brand-title">PHÒNG CHỐNG THAM NHŨNG</span>
-                        <span className="brand-subtitle">Vì một Việt Nam trong sạch</span>
-                    </div>
-                </div>
+                </Link>
 
-                {/* Navigation Menu */}
-                <div className="navbar-menu">
-                    <a href="#home" className="nav-link active">Trang chủ</a>
-                    <a href="#about" className="nav-link">Tham nhũng là gì</a>
-                    <a href="#protection" className="nav-link">Bảo vệ chế độ</a>
-                    <a href="#responsibility" className="nav-link">Trách nhiệm công dân</a>
-                    <a href="#resources" className="nav-link">Tài nguyên</a>
-                </div>
-
-                {/* CTA Button */}
+                {/* Quiz Button */}
                 <div className="navbar-cta">
-                    <button className="report-button">
-                        <span className="report-icon">📢</span>
-                        Báo cáo tham nhũng
-                    </button>
+                    <Link to="/quiz" className="quiz-button-link">
+                        <button className="quiz-button">
+                            Trắc nghiệm
+                        </button>
+                    </Link>
                 </div>
             </div>
         </nav>
