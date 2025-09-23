@@ -114,7 +114,6 @@ const Home: React.FC = () => {
                             <span className="title-question">là gì?</span>
                         </span>
                     </h1>
-                    <p className="hero-subtitle">Khám phá về hiện tượng tham nhũng và tác động của nó trong xã hội</p>
                     <div className="scroll-indicator">
                         <div className="scroll-arrow"></div>
                     </div>
@@ -241,8 +240,8 @@ const Home: React.FC = () => {
                             </p>
                             <div className="final-definition">
                                 <strong>
-                                    Tham nhũng là hành vi của người có chức vụ, quyền h���n sử dụng chức vụ quyền hạn của mình
-                                    làm trái pháp luật để m��u cầu lợi ích riêng.
+                                    Tham nhũng là hành vi của người có chức vụ, quyền hạn sử dụng chức vụ quyền hạn của mình
+                                    làm trái pháp luật để mưu cầu lợi ích riêng.
                                 </strong>
                             </div>
                         </div>
@@ -263,84 +262,49 @@ const Home: React.FC = () => {
                 <div className="corruption-hero-container">
                     <div className="corruption-hero-header">
                         <h2 className="corruption-hero-title">Đặc trưng của Tham nhũng</h2>
-                        <p className="corruption-hero-subtitle">Những biểu hiện và hậu quả của hiện tượng tham nhũng trong xã hội</p>
                     </div>
 
-                    <div className="corruption-characteristics-grid">
-                        <div className="characteristic-card card-abuse">
-                            <div className="card-icon">
-                                <div className="icon-container">⚠️</div>
+                    {/* Add Features Section */}
+                    <div className="features-container">
+                        <div className="feature-card">
+                            <div className="feature-content">
+                                <h3 className="feature-title">Lạm dụng quyền lực</h3>
+                                <p className="feature-text">
+                                    Sử dụng vị trí, chức vụ, quyền hạn được giao để thực hiện hành vi vì lợi ích cá nhân,
+                                    đi ngược lại mục đích của việc trao quyền
+                                </p>
                             </div>
-                            <h3 className="card-title">Lạm dụng quyền lực</h3>
-                            <p className="card-description">
-                                Sử dụng chức vụ, quyền hạn được giao một cách trái phép để phục vụ lợi ích cá nhân
-                            </p>
-                            <div className="card-decoration"></div>
                         </div>
 
-                        <div className="characteristic-card card-personal">
-                            <div className="card-icon">
-                                <div className="icon-container">💰</div>
+                        <div className="feature-card">
+                            <div className="feature-content">
+                                <h3 className="feature-title">Tính chất phi pháp</h3>
+                                <p className="feature-text">
+                                    Các hành vi tham nhũng đều vi phạm pháp luật, đi ngược lại các quy định và
+                                    chuẩn mực đạo đức xã hội
+                                </p>
                             </div>
-                            <h3 className="card-title">Vụ lợi cá nhân</h3>
-                            <p className="card-description">
-                                Mưu cầu lợi ích riêng cho bản thân, gia đình hoặc nhóm người có liên quan
-                            </p>
-                            <div className="card-decoration"></div>
                         </div>
 
-                        <div className="characteristic-card card-damage">
-                            <div className="card-icon">
-                                <div className="icon-container">💔</div>
+                        <div className="feature-card">
+                            <div className="feature-content">
+                                <h3 className="feature-title">Động cơ vụ lợi</h3>
+                                <p className="feature-text">
+                                    Mục đích cuối cùng của hành vi tham nhũng là nhằm đạt được các lợi ích
+                                    vật chất hoặc phi vật chất cho cá nhân
+                                </p>
                             </div>
-                            <h3 className="card-title">Gây thiệt hại</h3>
-                            <p className="card-description">
-                                Làm tổn hại đến tài sản, quy���n lợi của Nhà nước, tập thể và cá nhân
-                            </p>
-                            <div className="card-decoration"></div>
                         </div>
 
-                        <div className="characteristic-card card-illegal">
-                            <div className="card-icon">
-                                <div className="icon-container">⚖️</div>
+                        <div className="feature-card">
+                            <div className="feature-content">
+                                <h3 className="feature-title">Tính ẩn giấu</h3>
+                                <p className="feature-text">
+                                    Hành vi tham nhũng thường được thực hiện một cách kín đáo, được ngụy trang
+                                    dưới các hoạt động hợp pháp
+                                </p>
                             </div>
-                            <h3 className="card-title">Vi phạm pháp luật</h3>
-                            <p className="card-description">
-                                Cố ý làm trái các quy định pháp luật và chuẩn mực đạo đức xã hội
-                            </p>
-                            <div className="card-decoration"></div>
                         </div>
-
-                        <div className="characteristic-card card-trust">
-                            <div className="card-icon">
-                                <div className="icon-container">🏛️</div>
-                            </div>
-                            <h3 className="card-title">Mất lòng tin</h3>
-                            <p className="card-description">
-                                Làm suy giảm niềm tin của nhân dân đối với các cơ quan, tổ chức
-                            </p>
-                            <div className="card-decoration"></div>
-                        </div>
-
-                        <div className="characteristic-card card-development">
-                            <div className="card-icon">
-                                <div className="icon-container">📉</div>
-                            </div>
-                            <h3 className="card-title">Cản trở phát triển</h3>
-                            <p className="card-description">
-                                Ảnh hưởng tiêu cực đến sự phát triển kinh tế - xã hội của đất nước
-                            </p>
-                            <div className="card-decoration"></div>
-                        </div>
-                    </div>
-
-                    <div className="corruption-impact-summary">
-                        <div className="impact-icon">���</div>
-                        <h3 className="impact-title">Tác động nghiêm trọng</h3>
-                        <p className="impact-text">
-                            Tham nhũng không chỉ gây thiệt hại về kinh tế mà còn làm suy thoái đạo đức xã hội,
-                            phá hoại lòng tin của nhân dân và cản trở sự phát triển bền vững của đất nước.
-                        </p>
                     </div>
                 </div>
 
