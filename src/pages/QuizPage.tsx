@@ -829,11 +829,11 @@ const QuizSystem: React.FC = () => {
     if (phase === 'result') {
         const percentage = Math.round((score / questions.length) * 100)
         const getGrade = (percent: number) => {
-            if (percent >= 90) return { grade: 'Xuất sắc', color: '#4caf50', emoji: '🏆' }
-            if (percent >= 80) return { grade: 'Giỏi', color: '#8bc34a', emoji: '🌟' }
-            if (percent >= 70) return { grade: 'Khá', color: '#ffc107', emoji: '👍' }
-            if (percent >= 50) return { grade: 'Trung bình', color: '#ff9800', emoji: '📚' }
-            return { grade: 'Yếu', color: '#f44336', emoji: '💪' }
+            if (percent >= 90) return { grade: 'Yêu nước', color: '#4caf50', emoji: '💕' }
+            if (percent >= 80) return { grade: 'Yêu nước', color: '#8bc34a', emoji: '💕' }
+            if (percent >= 70) return { grade: 'Còn liêm', color: '#ffc107', emoji: '👍' }
+            if (percent >= 50) return { grade: 'Tham nhũng con', color: '#ff9800', emoji: '😒' }
+            return { grade: 'Tham nhũng chúa', color: '#f44336', emoji: '💀' }
         }
 
         const gradeInfo = getGrade(percentage)
