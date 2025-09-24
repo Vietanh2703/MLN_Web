@@ -438,16 +438,6 @@ const Home: React.FC = () => {
                             </div>
                         </div>
                     </div>
-
-                    <div className="causes-summary">
-                        <div className="summary-card">
-                            <h3 className="summary-title">Tổng kết</h3>
-                            <p className="summary-text">
-                                Nguyên nhân của tham nhũng rất đa dạng và phức tạp, bao gồm cả những yếu tố khách quan và chủ quan.
-                                Việc nhận diện đúng các nguyên nhân này là cơ sở quan trọng để xây dựng các giải pháp phòng chống tham nhũng hiệu quả.
-                            </p>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Background Elements */}
