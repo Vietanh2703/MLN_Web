@@ -4,7 +4,7 @@ import './Home.css';
 // Import ảnh hoa từ assets
 import flower1 from '../assets/1.jpg';
 import flower2 from '../assets/2.jpg';
-import flower3 from '../assets/3.jpeg';
+import flower3 from '../assets/3.jpg';
 import flower4 from '../assets/4.jpg';
 import coverImage from '../assets/corver-bac-trong.jpg';
 
@@ -16,35 +16,39 @@ const Home: React.FC = () => {
     const storyBlocks = [
         {
             id: 1,
-            title: "Vẻ Đẹp Thiên Nhiên",
-            subtitle: "Khám phá thế giới hoa tươi",
-            description: "Mỗi bông hoa là một tác phẩm nghệ thuật của thiên nhiên, mang trong mình vẻ đ��p thuần khiết và hương thơm ngọt ngào.",
+            title: "Vụ án Việt Á",
+            subtitle: "Thổi giá kit xét nghiệm COVID-19",
+            description: "Công ty Việt Á lợi dụng dịch bệnh để nâng khống giá bộ xét nghiệm, đưa hối lộ nhiều quan chức y tế. Vụ án gây chấn động, làm suy giảm niềm tin của công chúng và dẫn đến hàng loạt cán bộ bị xử lý.",
             image: flower1,
-            gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            link: "https://nhandan.vn/vu-an-viet-a-nang-khong-gia-kit-test-gay-thiet-hai-hon-400-ty-dong-cua-nha-nuoc-post790504.html"
         },
         {
             id: 2,
-            title: "Sắc Màu Rực Rỡ",
-            subtitle: "Bảng màu của đất trời",
-            description: "Từ những tông màu pastel dịu dàng đến những sắc độ rực rỡ, hoa luôn biết cách tô điểm cho cuộc sống thêm đầy màu sắc.",
+            title: "Vụ án PMU-18",
+            subtitle: "Tham nhũng trong quản lý vốn ODA",
+            description: "Xảy ra tại Bộ Giao thông Vận tải năm 2006, liên quan đến biển thủ, lạm dụng chức vụ và gian lận vốn ODA. Vụ án buộc nhiều quan chức cấp cao phải từ chức, làm dấy lên làn sóng phẫn nộ trong xã hội.",
             image: flower2,
-            gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+            gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+            link: "https://tuoitre.vn/lat-lai-ho-so-pmu18-ve-lai-chan-dung-bui-tien-dung-129419.htm"
         },
         {
             id: 3,
-            title: "Hương Thơm Quyến Rũ",
-            subtitle: "Nước hoa của thiên nhiên",
-            description: "Mỗi loài hoa đều có một hương thơm riêng biệt, như những nốt nhạc tạo nên bản giao hưởng tuyệt vời của mùa xuân.",
+            title: "Vụ án Vinashin",
+            subtitle: "Thất thoát hàng ngàn tỷ đồng",
+            description: "Tập đoàn Công nghiệp tàu thủy Việt Nam quản lý yếu kém, sai phạm tài chính nghiêm trọng, gây nợ nần và phá sản. Nhà nước thiệt hại lớn, nhưng số tài sản thu hồi được rất thấp.",
             image: flower3,
-            gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+            gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+            link: "https://noichinh.vn/ho-so-tu-lieu/201205/vu-an-tai-tap-doan-kinh-te-vinashin-bai-hoc-trong-cong-tac-quan-ly-291151/"
         },
         {
             id: 4,
-            title: "Vẻ Đẹp Vĩnh Cửu",
-            subtitle: "Tình yêu không bao giờ tàn phai",
-            description: "Dù thời gian có trôi qua, vẻ đẹp của hoa luôn được lưu giữ trong trái tim và ký ức của chúng ta.",
+            title: "Vụ án Vạn Thịnh Phát – Trương Mỹ Lan",
+            subtitle: "Siêu lừa đảo tài chính lớn nhất lịch sử",
+            description: "Chủ tịch Vạn Thịnh Phát thao túng Ngân hàng SCB, thực hiện hàng ngàn khoản vay giả mạo, gây thiệt hại hàng chục tỷ USD. Đây là vụ án kinh tế – tham nhũng có quy mô và mức độ nghiêm trọng nhất Việt Nam.",
             image: flower4,
-            gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)"
+            gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+            link: "https://xaydungchinhsach.chinhphu.vn/dai-an-van-thinh-phat-truy-to-truong-my-lan-va-85-bi-can-119231215145320997.htm"
         }
     ];
 
@@ -261,7 +265,12 @@ const Home: React.FC = () => {
             <section className="corruption-hero-section">
                 <div className="corruption-hero-container">
                     <div className="corruption-hero-header">
-                        <h2 className="corruption-hero-title">Đặc trưng của Tham nhũng</h2>
+                        <h2 className="corruption-hero-title">
+                            <span className="title-line title-main">
+                                <span className="title-underlined">Đặc trưng</span>
+                                <span className="title-extend">của Tham nhũng</span>
+                            </span>
+                        </h2>
                     </div>
 
                     {/* Add Features Section */}
@@ -322,8 +331,12 @@ const Home: React.FC = () => {
             <section className="causes-section">
                 <div className="causes-container">
                     <div className="causes-hero">
-                        <h2 className="causes-title">Nguyên nhân của Tham nhũng</h2>
-                        <p className="causes-subtitle">Tìm hiểu những nguyên nhân gốc rễ dẫn đến tình trạng tham nhũng trong xã hội</p>
+                        <h2 className="causes-title">
+                            <span className="title-line title-main">
+                                <span className="title-underlined">Nguyên nhân</span>
+                                <span className="title-extend">của Tham nhũng</span>
+                            </span>
+                        </h2>
                     </div>
 
                     <div className="causes-grid">
@@ -449,7 +462,102 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
+            {/* Consequences of Corruption Section */}
+            <section className="consequences-section">
+                <div className="consequences-container">
+                    <div className="consequences-header">
+                        <h2 className="consequences-title">
+                            <span className="title-line title-main">
+                                <span className="title-underlined">Hậu quả</span>
+                                <span className="title-extend">của Tham nhũng</span>
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div className="consequences-grid">
+                        {/* Economic Consequences */}
+                        <div className="consequence-group">
+                            <h3 className="group-title">
+                                <span className="group-icon">💰</span>
+                                Hậu quả Kinh tế
+                            </h3>
+                            <div className="consequence-cards">
+                                <div className="consequence-card" data-category="economic">
+                                    <h4>Thiệt hại ngân sách</h4>
+                                    <p>Gây thất thoát, lãng phí nguồn lực tài chính của nhà nước</p>
+                                </div>
+                                <div className="consequence-card" data-category="economic">
+                                    <h4>Giảm đầu tư</h4>
+                                    <p>Làm giảm niềm tin của nhà đầu tư, ảnh hưởng môi trường kinh doanh</p>
+                                </div>
+                                <div className="consequence-card" data-category="economic">
+                                    <h4>Méo mó thị trường</h4>
+                                    <p>Gây cạnh tranh không lành mạnh, ảnh hưởng đến hiệu quả phân bổ nguồn lực</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Political Consequences */}
+                        <div className="consequence-group">
+                            <h3 className="group-title">
+                                <span className="group-icon">⚖️</span>
+                                Hậu quả Chính trị
+                            </h3>
+                            <div className="consequence-cards">
+                                <div className="consequence-card" data-category="political">
+                                    <h4>Suy giảm lòng tin</h4>
+                                    <p>Làm giảm niềm tin của nhân dân vào Đảng và Nhà nước</p>
+                                </div>
+                                <div className="consequence-card" data-category="political">
+                                    <h4>Xói mòn thể chế</h4>
+                                    <p>Làm suy yếu hiệu lực, hiệu quả quản lý nhà nước</p>
+                                </div>
+                                <div className="consequence-card" data-category="political">
+                                    <h4>Bất ổn chính trị</h4>
+                                    <p>Gây mất ổn định chính trị, ảnh hưởng an ninh quốc gia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Social Consequences */}
+                        <div className="consequence-group">
+                            <h3 className="group-title">
+                                <span className="group-icon">👥</span>
+                                Hậu quả Xã hội
+                            </h3>
+                            <div className="consequence-cards">
+                                <div className="consequence-card" data-category="social">
+                                    <h4>Bất công xã hội</h4>
+                                    <p>Làm gia tăng bất bình đẳng và phân hóa giàu nghèo</p>
+                                </div>
+                                <div className="consequence-card" data-category="social">
+                                    <h4>Suy thoái đạo đức</h4>
+                                    <p>Làm xói mòn đạo đức, lối sống trong xã hội</p>
+                                </div>
+                                <div className="consequence-card" data-category="social">
+                                    <h4>Mất đoàn kết</h4>
+                                    <p>Phá vỡ mối quan hệ đoàn kết trong cộng đồng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Story Blocks */}
+            <section className="story-section">
+                <div className="story-container">
+                    <div className="story-header">
+                        <h2 className="story-section-title">
+                            <span className="title-line title-main">
+                                <span className="title-underlined">Những vụ án</span>
+                                <span className="title-extend">tiêu biểu</span>
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
             {storyBlocks.map((block, index) => (
                 <section
                     key={block.id}
@@ -459,7 +567,11 @@ const Home: React.FC = () => {
                     <div className="story-content">
                         <div className="story-text">
                             <div className="story-number">0{block.id}</div>
-                            <h2 className="story-title">{block.title}</h2>
+                            <h2 className="story-title">
+                                <a href={block.link} target="_blank" rel="noopener noreferrer" className="story-link">
+                                    {block.title}
+                                </a>
+                            </h2>
                             <h3 className="story-subtitle">{block.subtitle}</h3>
                             <p className="story-description">{block.description}</p>
                             <div className="story-divider"></div>
