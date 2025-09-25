@@ -725,7 +725,7 @@ const QuizSystem: React.FC = () => {
                         <ul>
                             <li><strong>Thời gian:</strong> 20 phút</li>
                             <li><strong>Số câu:</strong> 20 câu</li>
-                            <li><strong>Lưu ý:</strong> Không được thoát trang trong khi làm bài</li>
+                            <li><strong>Lưu ý:</strong> Không được thoát trang trong khi làm bài (reset trang ráng chịu 🤣)</li>
                         </ul>
                     </div>
 
