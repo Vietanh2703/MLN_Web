@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useChatbaseWidget } from '../hooks/useChatbaseWidget';
 import './Home.css';
 
 // Import ảnh hoa từ assets
@@ -10,6 +11,7 @@ import flower5 from '../assets/5.jpg';
 import coverImage from '../assets/corver-bac-trong.jpg';
 
 const Home: React.FC = () => {
+    useChatbaseWidget();
     const [currentSection, setCurrentSection] = useState(0);
     const [isVisible, setIsVisible] = useState<boolean[]>([]);
     const [contentVisible, setContentVisible] = useState<boolean[]>([]);
