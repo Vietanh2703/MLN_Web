@@ -6,6 +6,7 @@ import flower1 from '../assets/1.jpg';
 import flower2 from '../assets/2.jpg';
 import flower3 from '../assets/3.jpg';
 import flower4 from '../assets/4.jpg';
+import flower5 from '../assets/5.jpg';
 import coverImage from '../assets/corver-bac-trong.jpg';
 
 const Home: React.FC = () => {
@@ -532,11 +533,11 @@ const Home: React.FC = () => {
                                 </div>
                                 <div className="consequence-card" data-category="social">
                                     <h4>Suy thoái đạo đức</h4>
-                                    <p>Làm xói mòn đạo đức, lối sống trong xã hội</p>
+                                    <p>Làm xói mòn đạo đức, lối sống trong xã hội </p>
                                 </div>
                                 <div className="consequence-card" data-category="social">
                                     <h4>Mất đoàn kết</h4>
-                                    <p>Phá vỡ mối quan hệ đoàn kết trong cộng đồng</p>
+                                    <p>Phá vỡ mối quan hệ đoàn kết trong dân tộc cũng như tạo thời cơ cho các phần tử chống phá Nhà nước</p>
                                 </div>
                             </div>
                         </div>
@@ -604,18 +605,1133 @@ const Home: React.FC = () => {
                 ))}
             </div>
 
-            {/* Footer Section */}
-            <section className="footer-section">
-                <div className="footer-content">
-                    <h2 className="footer-title">Cảm Ơn Bạn</h2>
-                    <p className="footer-text">Đã cùng chúng tôi khám phá vẻ đẹp tuyệt vời của thế giới hoa</p>
-                    <div className="footer-decoration">
-                        <div className="decoration-line"></div>
-                        <div className="decoration-dot"></div>
-                        <div className="decoration-line"></div>
+            {/* Citizens' Responsibilities Section */}
+            <section
+                className="citizens-responsibility-section"
+                style={{
+                    minHeight: '120vh',
+                    background: '#ffffff',
+                    padding: '8rem 2rem',
+                    position: 'relative',
+                    overflow: 'hidden'
+                }}
+            >
+                <div
+                    className="citizens-container"
+                    style={{
+                        maxWidth: '1200px',
+                        margin: '0 auto',
+                        position: 'relative',
+                        zIndex: 2
+                    }}
+                >
+                    <div
+                        className="citizens-hero"
+                        style={{
+                            textAlign: 'center',
+                            marginBottom: '6rem',
+                            opacity: 1,
+                            transform: 'translateY(0)',
+                            animation: 'citizensHeroAppear 1.5s ease-out forwards'
+                        }}
+                    >
+                        <h2
+                            className="citizens-title"
+                            style={{
+                                fontFamily: "'Playfair Display', serif",
+                                fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                                fontWeight: 900,
+                                lineHeight: 1.1,
+                                marginBottom: '1.5rem',
+                                color: '#000000',
+                                textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+                                position: 'relative'
+                            }}
+                        >
+                            <span className="title-line title-main">
+                                <span
+                                    className="title-underlined"
+                                    style={{
+                                        position: 'relative',
+                                        display: 'inline-block',
+                                        marginRight: '1rem'
+                                    }}
+                                >
+                                    Trách nhiệm
+                                </span>
+                                <span
+                                    className="title-extend"
+                                    style={{
+                                        fontFamily: "'Dancing Script', cursive",
+                                        fontWeight: 700,
+                                        color: '#fd0c0c',
+                                        fontStyle: 'italic',
+                                        animation: 'citizensTitleBounce 1.5s ease-out 1.2s forwards',
+                                        opacity: 1,
+                                        transform: 'scale(1)'
+                                    }}
+                                >
+                                    của Người dân
+                                </span>
+                            </span>
+                        </h2>
+                        <p
+                            className="citizens-subtitle"
+                            style={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: '1.2rem',
+                                color: '#64748b',
+                                fontStyle: 'italic',
+                                marginTop: '1rem',
+                                opacity: 1,
+                                animation: 'citizensSubtitleFade 1s ease-out 1.5s forwards'
+                            }}
+                        >
+                            Trong phòng chống tham nhũng, tiêu cực
+                        </p>
+                    </div>
+
+                    <div
+                        className="citizens-content-flow"
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '2rem',
+                            maxWidth: '800px',
+                            margin: '0 auto',
+                            position: 'relative'
+                        }}
+                    >
+                        <div
+                            className="responsibility-item"
+                            data-animate="left"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '2rem',
+                                padding: '2.5rem',
+                                background: 'rgba(255, 255, 255, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '25px',
+                                border: '2px solid transparent',
+                                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
+                                position: 'relative',
+                                opacity: 1,
+                                transform: 'translateX(0)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                animation: 'slideInFromLeft 1s ease-out 0.5s forwards'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(2, 132, 199, 0.15)';
+                                e.currentTarget.style.borderColor = '#0284c7';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.08)';
+                                e.currentTarget.style.borderColor = 'transparent';
+                            }}
+                        >
+                            <div
+                                className="responsibility-icon"
+                                style={{
+                                    fontSize: '3.5rem',
+                                    background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                                    borderRadius: '50%',
+                                    width: '100px',
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
+                                    position: 'relative',
+                                    animation: 'responsibilityIconFloat 3s ease-in-out infinite'
+                                }}
+                            >
+                                🔍
+                            </div>
+                            <div className="responsibility-text" style={{ flex: 1 }}>
+                                <h3
+                                    style={{
+                                        fontFamily: "'Nunito', sans-serif",
+                                        fontSize: '1.6rem',
+                                        fontWeight: 800,
+                                        color: '#0f172a',
+                                        marginBottom: '0.8rem',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    Tích cực phát hiện
+                                </h3>
+                                <p
+                                    style={{
+                                        fontFamily: "'Inter', sans-serif",
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.7,
+                                        color: '#475569',
+                                        fontWeight: 400
+                                    }}
+                                >
+                                    Chủ động phát hiện và cung cấp thông tin về các hành vi tham nhũng, tiêu cực cho cơ quan có thẩm quyền
+                                </p>
+                            </div>
+                            <div
+                                className="responsibility-decoration decoration-1"
+                                style={{
+                                    position: 'absolute',
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    opacity: 0.6,
+                                    top: '-20px',
+                                    right: '-20px',
+                                    background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                                    animation: 'responsibilityDecorationFloat 4s ease-in-out infinite'
+                                }}
+                            />
+                        </div>
+
+                        <div
+                            className="connecting-path path-1"
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                height: '100px',
+                                position: 'relative',
+                                opacity: 1,
+                                animation: 'citizensPathAppear 1s ease-out 0.6s forwards'
+                            }}
+                        >
+                            <svg
+                                viewBox="0 0 300 100"
+                                className="path-svg"
+                                style={{
+                                    width: '300px',
+                                    height: '100px'
+                                }}
+                            >
+                                <path
+                                    d="M0,50 Q150,10 300,50"
+                                    stroke="#e5e7eb"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeDasharray="5,5"
+                                    className="animated-path"
+                                    style={{
+                                        strokeDasharray: '1000',
+                                        strokeDashoffset: '0',
+                                        animation: 'drawCitizensPath 2s ease-out 0.8s forwards'
+                                    }}
+                                />
+                            </svg>
+                        </div>
+
+                        <div
+                            className="responsibility-item"
+                            data-animate="right"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '2rem',
+                                padding: '2.5rem',
+                                background: 'rgba(255, 255, 255, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '25px',
+                                border: '2px solid transparent',
+                                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
+                                position: 'relative',
+                                opacity: 1,
+                                transform: 'translateX(0)',
+                                flexDirection: 'row-reverse',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                animation: 'slideInFromRight 1s ease-out 0.7s forwards'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(2, 132, 199, 0.15)';
+                                e.currentTarget.style.borderColor = '#0284c7';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.08)';
+                                e.currentTarget.style.borderColor = 'transparent';
+                            }}
+                        >
+                            <div
+                                className="responsibility-icon"
+                                style={{
+                                    fontSize: '3.5rem',
+                                    background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                                    borderRadius: '50%',
+                                    width: '100px',
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
+                                    position: 'relative',
+                                    animation: 'responsibilityIconFloat 3s ease-in-out infinite'
+                                }}
+                            >
+                                ⚖️
+                            </div>
+                            <div className="responsibility-text" style={{ flex: 1 }}>
+                                <h3
+                                    style={{
+                                        fontFamily: "'Nunito', sans-serif",
+                                        fontSize: '1.6rem',
+                                        fontWeight: 800,
+                                        color: '#0f172a',
+                                        marginBottom: '0.8rem',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    Giám sát hoạt động
+                                </h3>
+                                <p
+                                    style={{
+                                        fontFamily: "'Inter', sans-serif",
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.7,
+                                        color: '#475569',
+                                        fontWeight: 400
+                                    }}
+                                >
+                                    Tham gia giám sát việc thực hiện pháp luật và các hoạt động của cơ quan công quyền
+                                </p>
+                            </div>
+                            <div
+                                className="responsibility-decoration decoration-2"
+                                style={{
+                                    position: 'absolute',
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    opacity: 0.6,
+                                    bottom: '-20px',
+                                    left: '-20px',
+                                    background: 'linear-gradient(135deg, #ec4899, #be185d)',
+                                    animation: 'responsibilityDecorationFloat 4s ease-in-out infinite 1s'
+                                }}
+                            />
+                        </div>
+
+                        <div
+                            className="connecting-path path-2"
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                height: '100px',
+                                position: 'relative',
+                                opacity: 1,
+                                animation: 'citizensPathAppear 1s ease-out 0.8s forwards'
+                            }}
+                        >
+                            <svg
+                                viewBox="0 0 300 100"
+                                className="path-svg"
+                                style={{
+                                    width: '300px',
+                                    height: '100px'
+                                }}
+                            >
+                                <path
+                                    d="M0,50 Q150,90 300,50"
+                                    stroke="#e5e7eb"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeDasharray="5,5"
+                                    className="animated-path"
+                                    style={{
+                                        strokeDasharray: '1000',
+                                        strokeDashoffset: '0',
+                                        animation: 'drawCitizensPath 2s ease-out 1s forwards'
+                                    }}
+                                />
+                            </svg>
+                        </div>
+
+                        <div
+                            className="responsibility-item"
+                            data-animate="left"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '2rem',
+                                padding: '2.5rem',
+                                background: 'rgba(255, 255, 255, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '25px',
+                                border: '2px solid transparent',
+                                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
+                                position: 'relative',
+                                opacity: 1,
+                                transform: 'translateX(0)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                animation: 'slideInFromLeft 1s ease-out 1s forwards'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(2, 132, 199, 0.15)';
+                                e.currentTarget.style.borderColor = '#0284c7';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.08)';
+                                e.currentTarget.style.borderColor = 'transparent';
+                            }}
+                        >
+                            <div
+                                className="responsibility-icon"
+                                style={{
+                                    fontSize: '3.5rem',
+                                    background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                                    borderRadius: '50%',
+                                    width: '100px',
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
+                                    position: 'relative',
+                                    animation: 'responsibilityIconFloat 3s ease-in-out infinite'
+                                }}
+                            >
+                                📢
+                            </div>
+                            <div className="responsibility-text" style={{ flex: 1 }}>
+                                <h3
+                                    style={{
+                                        fontFamily: "'Nunito', sans-serif",
+                                        fontSize: '1.6rem',
+                                        fontWeight: 800,
+                                        color: '#0f172a',
+                                        marginBottom: '0.8rem',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    Tố cáo hành vi vi phạm
+                                </h3>
+                                <p
+                                    style={{
+                                        fontFamily: "'Inter', sans-serif",
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.7,
+                                        color: '#475569',
+                                        fontWeight: 400
+                                    }}
+                                >
+                                    Kịp thời tố cáo các hành vi tham nhũng, tiêu cực đến cơ quan chức năng có thẩm quyền
+                                </p>
+                            </div>
+                            <div
+                                className="responsibility-decoration decoration-3"
+                                style={{
+                                    position: 'absolute',
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    opacity: 0.6,
+                                    top: '-20px',
+                                    right: '-20px',
+                                    background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                                    animation: 'responsibilityDecorationFloat 4s ease-in-out infinite'
+                                }}
+                            />
+                        </div>
+
+                        <div
+                            className="connecting-path path-3"
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                height: '100px',
+                                position: 'relative',
+                                opacity: 1,
+                                animation: 'citizensPathAppear 1s ease-out 1.2s forwards'
+                            }}
+                        >
+                            <svg
+                                viewBox="0 0 300 100"
+                                className="path-svg"
+                                style={{
+                                    width: '300px',
+                                    height: '100px'
+                                }}
+                            >
+                                <path
+                                    d="M0,50 Q150,10 300,50"
+                                    stroke="#e5e7eb"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeDasharray="5,5"
+                                    className="animated-path"
+                                    style={{
+                                        strokeDasharray: '1000',
+                                        strokeDashoffset: '0',
+                                        animation: 'drawCitizensPath 2s ease-out 1.4s forwards'
+                                    }}
+                                />
+                            </svg>
+                        </div>
+
+                        <div
+                            className="responsibility-item"
+                            data-animate="right"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '2rem',
+                                padding: '2.5rem',
+                                background: 'rgba(255, 255, 255, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '25px',
+                                border: '2px solid transparent',
+                                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
+                                position: 'relative',
+                                opacity: 1,
+                                transform: 'translateX(0)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                animation: 'slideInFromRight 1s ease-out 1.5s forwards'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(2, 132, 199, 0.15)';
+                                e.currentTarget.style.borderColor = '#0284c7';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.08)';
+                                e.currentTarget.style.borderColor = 'transparent';
+                            }}
+                        >
+                            <div
+                                className="responsibility-icon"
+                                style={{
+                                    fontSize: '3.5rem',
+                                    background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                                    borderRadius: '50%',
+                                    width: '100px',
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
+                                    position: 'relative',
+                                    animation: 'responsibilityIconFloat 3s ease-in-out infinite'
+                                }}
+                            >
+                                🤝
+                            </div>
+                            <div className="responsibility-text" style={{ flex: 1 }}>
+                                <h3
+                                    style={{
+                                        fontFamily: "'Nunito', sans-serif",
+                                        fontSize: '1.6rem',
+                                        fontWeight: 800,
+                                        color: '#0f172a',
+                                        marginBottom: '0.8rem',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    Phối hợp với cơ quan chức năng
+                                </h3>
+                                <p
+                                    style={{
+                                        fontFamily: "'Inter', sans-serif",
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.7,
+                                        color: '#475569',
+                                        fontWeight: 400
+                                    }}
+                                >
+                                    Tích cực phối hợp, cung cấp thông tin trong việc điều tra, xác minh các vụ việc tham nhũng
+                                </p>
+                            </div>
+                            <div
+                                className="responsibility-decoration decoration-4"
+                                style={{
+                                    position: 'absolute',
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    opacity: 0.6,
+                                    top: '-20px',
+                                    right: '-20px',
+                                    background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                                    animation: 'responsibilityDecorationFloat 4s ease-in-out infinite'
+                                }}
+                            />
+                        </div>
+
+                        <div
+                            className="connecting-path path-4"
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                height: '100px',
+                                position: 'relative',
+                                opacity: 1,
+                                animation: 'citizensPathAppear 1s ease-out 1.6s forwards'
+                            }}
+                        >
+                            <svg
+                                viewBox="0 0 300 100"
+                                className="path-svg"
+                                style={{
+                                    width: '300px',
+                                    height: '100px'
+                                }}
+                            >
+                                <path
+                                    d="M0,50 Q150,90 300,50"
+                                    stroke="#e5e7eb"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeDasharray="5,5"
+                                    className="animated-path"
+                                    style={{
+                                        strokeDasharray: '1000',
+                                        strokeDashoffset: '0',
+                                        animation: 'drawCitizensPath 2s ease-out 1.8s forwards'
+                                    }}
+                                />
+                            </svg>
+                        </div>
+
+                        <div
+                            className="responsibility-item"
+                            data-animate="left"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '2rem',
+                                padding: '2.5rem',
+                                background: 'rgba(255, 255, 255, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '25px',
+                                border: '2px solid transparent',
+                                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
+                                position: 'relative',
+                                opacity: 1,
+                                transform: 'translateX(0)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                animation: 'slideInFromLeft 1s ease-out 1.2s forwards'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(2, 132, 199, 0.15)';
+                                e.currentTarget.style.borderColor = '#0284c7';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.08)';
+                                e.currentTarget.style.borderColor = 'transparent';
+                            }}
+                        >
+                            <div
+                                className="responsibility-icon"
+                                style={{
+                                    fontSize: '3.5rem',
+                                    background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                                    borderRadius: '50%',
+                                    width: '100px',
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
+                                    position: 'relative',
+                                    animation: 'responsibilityIconFloat 3s ease-in-out infinite'
+                                }}
+                            >
+                                📚
+                            </div>
+                            <div className="responsibility-text" style={{ flex: 1 }}>
+                                <h3
+                                    style={{
+                                        fontFamily: "'Nunito', sans-serif",
+                                        fontSize: '1.6rem',
+                                        fontWeight: 800,
+                                        color: '#0f172a',
+                                        marginBottom: '0.8rem',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    Tuyên truyền, vận động
+                                </h3>
+                                <p
+                                    style={{
+                                        fontFamily: "'Inter', sans-serif",
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.7,
+                                        color: '#475569',
+                                        fontWeight: 400
+                                    }}
+                                >
+                                    Tuyên truyền, vận động mọi người cùng thực hiện pháp luật về phòng, chống tham nhũng
+                                </p>
+                            </div>
+                            <div
+                                className="responsibility-decoration decoration-5"
+                                style={{
+                                    position: 'absolute',
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    opacity: 0.6,
+                                    top: '-20px',
+                                    right: '-20px',
+                                    background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                                    animation: 'responsibilityDecorationFloat 4s ease-in-out infinite'
+                                }}
+                            />
+                        </div>
+
+                        <div
+                            className="connecting-path path-5"
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                height: '100px',
+                                position: 'relative',
+                                opacity: 1,
+                                animation: 'citizensPathAppear 1s ease-out 2s forwards'
+                            }}
+                        >
+                            <svg
+                                viewBox="0 0 300 100"
+                                className="path-svg"
+                                style={{
+                                    width: '300px',
+                                    height: '100px'
+                                }}
+                            >
+                                <path
+                                    d="M0,50 Q150,10 300,50"
+                                    stroke="#e5e7eb"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeDasharray="5,5"
+                                    className="animated-path"
+                                    style={{
+                                        strokeDasharray: '1000',
+                                        strokeDashoffset: '0',
+                                        animation: 'drawCitizensPath 2s ease-out 2.2s forwards'
+                                    }}
+                                />
+                            </svg>
+                        </div>
+
+                        <div
+                            className="responsibility-item"
+                            data-animate="center"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '2rem',
+                                padding: '2.5rem',
+                                background: 'rgba(255, 255, 255, 0.8)',
+                                backdropFilter: 'blur(10px)',
+                                borderRadius: '25px',
+                                border: '2px solid transparent',
+                                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
+                                position: 'relative',
+                                opacity: 1,
+                                transform: 'translateY(0)',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                animation: 'slideInFromBottom 1s ease-out 2.5s forwards'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-10px)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(2, 132, 199, 0.15)';
+                                e.currentTarget.style.borderColor = '#0284c7';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.08)';
+                                e.currentTarget.style.borderColor = 'transparent';
+                            }}
+                        >
+                            <div
+                                className="responsibility-icon"
+                                style={{
+                                    fontSize: '3.5rem',
+                                    background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+                                    borderRadius: '50%',
+                                    width: '100px',
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
+                                    position: 'relative',
+                                    animation: 'responsibilityIconFloat 3s ease-in-out infinite'
+                                }}
+                            >
+                                📋
+                            </div>
+                            <div className="responsibility-text" style={{ flex: 1 }}>
+                                <h3
+                                    style={{
+                                        fontFamily: "'Nunito', sans-serif",
+                                        fontSize: '1.6rem',
+                                        fontWeight: 800,
+                                        color: '#0f172a',
+                                        marginBottom: '0.8rem',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    Tuân thủ pháp luật
+                                </h3>
+                                <p
+                                    style={{
+                                        fontFamily: "'Inter', sans-serif",
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.7,
+                                        color: '#475569',
+                                        fontWeight: 400
+                                    }}
+                                >
+                                    Nghiêm chỉnh chấp hành và thực hiện các quy định của pháp luật về phòng, chống tham nhũng
+                                </p>
+                            </div>
+                            <div
+                                className="responsibility-decoration decoration-6"
+                                style={{
+                                    position: 'absolute',
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    opacity: 0.6,
+                                    top: '-20px',
+                                    right: '-20px',
+                                    background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                                    animation: 'responsibilityDecorationFloat 4s ease-in-out infinite'
+                                }}
+                            />
+                        </div>
+                    </div>
+
+                    <div
+                        className="citizens-floating-elements"
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            pointerEvents: 'none',
+                            zIndex: 1
+                        }}
+                    >
+                        <div
+                            className="floating-shape shape-circle"
+                            style={{
+                                position: 'absolute',
+                                opacity: 0.4,
+                                width: '120px',
+                                height: '120px',
+                                background: 'linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(3, 105, 161, 0.1) 100%)',
+                                borderRadius: '50%',
+                                top: '15%',
+                                left: '5%',
+                                animation: 'citizensShapeFloat 8s ease-in-out infinite',
+                                animationDuration: '10s'
+                            }}
+                        />
+                        <div
+                            className="floating-shape shape-triangle"
+                            style={{
+                                position: 'absolute',
+                                opacity: 0.4,
+                                width: 0,
+                                height: 0,
+                                borderLeft: '50px solid transparent',
+                                borderRight: '50px solid transparent',
+                                borderBottom: '86.6px solid rgba(2, 132, 199, 0.1)',
+                                top: '60%',
+                                right: '10%',
+                                animation: 'citizensShapeFloat 8s ease-in-out infinite',
+                                animationDuration: '12s',
+                                animationDelay: '2s'
+                            }}
+                        />
+                        <div
+                            className="floating-particles"
+                            style={{
+                                position: 'absolute',
+                                width: '100%',
+                                height: '100%'
+                            }}
+                        >
+                            {[...Array(5)].map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="particle"
+                                    style={{
+                                        position: 'absolute',
+                                        width: '6px',
+                                        height: '6px',
+                                        background: '#0284c7',
+                                        borderRadius: '50%',
+                                        opacity: 0.6,
+                                        animation: 'citizensParticleFloat 6s ease-in-out infinite',
+                                        animationDelay: `${i * 1.2}s`,
+                                        top: `${20 + i * 15}%`,
+                                        left: `${20 + i * 10}%`
+                                    }}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
+
+                <style>{`
+                    @keyframes citizensHeroAppear {
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    @keyframes citizensTitleBounce {
+                        0% {
+                            opacity: 0;
+                            transform: scale(0.5);
+                        }
+                        60% {
+                            opacity: 1;
+                            transform: scale(1.1);
+                        }
+                        100% {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+
+                    @keyframes citizensSubtitleFade {
+                        to {
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes slideInFromLeft {
+                        to {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+
+                    @keyframes slideInFromRight {
+                        to {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+
+                    @keyframes responsibilityIconFloat {
+                        0%, 100% {
+                            transform: translateY(0) rotate(0deg);
+                        }
+                        50% {
+                            transform: translateY(-10px) rotate(5deg);
+                        }
+                    }
+
+                    @keyframes responsibilityDecorationFloat {
+                        0%, 100% {
+                            transform: translateY(0) scale(1);
+                        }
+                        50% {
+                            transform: translateY(-15px) scale(1.1);
+                        }
+                    }
+
+                    @keyframes citizensPathAppear {
+                        to {
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes drawCitizensPath {
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    @keyframes citizensShapeFloat {
+                        0%, 100% {
+                            transform: translateY(0) rotate(0deg);
+                        }
+                        50% {
+                            transform: translateY(-30px) rotate(10deg);
+                        }
+                    }
+
+                    @keyframes citizensParticleFloat {
+                        0%, 100% {
+                            transform: translateY(0) scale(1);
+                            opacity: 0.6;
+                        }
+                        50% {
+                            transform: translateY(-20px) scale(1.2);
+                            opacity: 1;
+                        }
+                    }
+
+                    .title-underlined::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+                        border-radius: 2px;
+                        animation: citizensUnderlineExpand 2s ease-out 0.8s forwards;
+                        transform-origin: left;
+                        scale: 1 1;
+                    }
+
+                    @keyframes citizensUnderlineExpand {
+                        to {
+                            scale: 1 1;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        .responsibility-item {
+                            flex-direction: column !important;
+                            text-align: center;
+                            padding: 2rem;
+                            gap: 1.5rem;
+                        }
+
+                        .responsibility-icon {
+                            width: 80px;
+                            height: 80px;
+                            font-size: 2.5rem;
+                        }
+                    }
+                `}</style>
             </section>
+
+            {/* Image Section - 5.jpg */}
+            <section
+                className="image-section-5"
+                style={{
+                    minHeight: '60vh',
+                    background: '#f8fafc',
+                    padding: '0',
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+            >
+                <div
+                    className="image-container-5"
+                    style={{
+                        width: '100vw',
+                        position: 'relative',
+                        borderRadius: '0',
+                        overflow: 'hidden',
+                        boxShadow: 'none',
+                        animation: 'fadeInScale 1.5s ease-out forwards'
+                    }}
+                >
+                    <img
+                        src={flower5}
+                        alt="Phòng chống tham nhũng"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            display: 'block',
+                            transition: 'transform 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.02)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)';
+                        }}
+                    />
+                    <div
+                        className="image-overlay-5"
+                        style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            background: 'linear-gradient(transparent, rgba(0, 0, 0, 0.7))',
+                            padding: '2rem',
+                            color: 'white'
+                        }}
+                    >
+                        <p
+                            style={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: '0.9rem',
+                                opacity: 0.9,
+                                margin: 0,
+                                textAlign: 'right'
+                            }}
+                        >
+                            Nguồn: Tài liệu tham khảo
+                        </p>
+                    </div>
+                </div>
+
+                <style>{`
+                    @keyframes fadeInScale {
+                        from {
+                            opacity: 0;
+                            transform: scale(0.9);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                `}</style>
+            </section>
+
+            {/* Footer */}
+            <footer
+                style={{
+                    backgroundColor: '#000000',
+                    color: '#ffffff',
+                    padding: '2rem 0',
+                    textAlign: 'center'
+                }}
+            >
+                <div
+                    style={{
+                        maxWidth: '1200px',
+                        margin: '0 auto',
+                        padding: '0 2rem'
+                    }}
+                >
+                    <p
+                        style={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: '0.9rem',
+                            margin: 0,
+                            opacity: 0.8
+                        }}
+                    >
+                        © Vietanh2703
+                    </p>
+                </div>
+            </footer>
+
         </div>
     );
 };
